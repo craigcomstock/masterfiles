@@ -14,7 +14,8 @@ create-env: copy env
 
 
 clean-local:
-	rm -rf workdir
+# comment out for inspection after build
+#	rm -rf workdir
 
 
 check-local: create-env
