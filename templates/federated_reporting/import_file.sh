@@ -36,10 +36,13 @@ EOF
 cat<<EOF
 
 SET SCHEMA 'public';
+SELECT now();
 SELECT attach_feeder_schema('$hostkey', ARRAY[$table_whitelist]);
+SELECT now();
 COMMIT;
+SELECT now();
 EOF
-} | "$CFE_BIN_DIR"/psql -U $CFE_FR_DB_USER -d cfdb >$file.log 2>&1 && {
+} | "$CFE_BIN_DIR"/psql -U $CFE_FR_DB_USER -d cfdb >$file.log 2>/dev/null && {
   rm -f "$file.importing"
   exit 0
 } || {

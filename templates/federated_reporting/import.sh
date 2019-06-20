@@ -48,11 +48,8 @@ chmod u+x "$(dirname "$0")/import_file.sh"
 
 log "Importing files: $dump_files"
 failed=0
-# for now, import in serial to avoid deadlocks (ENT-4742)
-for file in $dump_files; do
-  "$(dirname "$0")/import_file.sh" $file || failed=1
-done
-
+echo "$dump_files" | run_in_parallel "$(dirname "$0")/import_file.sh" - $CFE_FR_IMPORT_NJOBS ||
+    failed=1
 
 if [ "$failed" != "0" ]; then
   log "Importing files: FAILED"
