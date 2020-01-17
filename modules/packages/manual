@@ -1,0 +1,110 @@
+#!/bin/bash
+if [ "$1" == "supports-api-version" ]; then
+  echo "1"
+  exit
+fi
+
+if [ "$1" == "get-package-data" ]; then
+  while read line
+  do
+    #echo "line=$line"
+    if [[ "$line" =~ "File=" ]]; then
+      name=$(echo "$line" | sed -e 's/File=//')
+      #echo "Found File entry of '$name'"
+      # todo instead of case, use an array with a structure function for manual steps
+      case "$name" in
+      "brew")
+        echo "PackageType=repo"
+        echo "Name=brew"
+        exit
+        ;;
+      *)
+        echo "File $name not supported"
+        exit 1 # failure
+      esac
+    fi
+  done
+  echo "No File= line found"
+  exit 1
+fi
+
+if [ "$1" == "list-installed" ]; then
+  brew_version=$(brew --version 2>/dev/null | head -n1 | cut -d' ' -f2)
+  if [ -n "$brew_version" ]; then
+    echo "Name=brew
+Version=$brew_version
+Architecture=amd64" # todo, how to know arch?
+  fi
+  exit
+fi
+
+if [ "$1" == "list-updates" ]; then
+  brew_latest_version=$(wget -qO- https://github.com/Homebrew/brew/releases/latest | grep title | grep Release | sed -e 's/^.*Release //' -e 's/ .*$//')
+  echo "Name=brew
+Version=$brew_latest_version
+Architecture=amd64"
+  exit
+fi
+
+if [ "$1" == "list-updates-local" ]; then
+  brew_version=$(brew --version 2>/dev/null | head -n1 | cut -d' ' -f2)
+  if [ -n "$brew_version" ]; then
+    echo "Name=brew
+Version=$brew_version
+Architecture=amd64" # todo, how to know arch?
+  fi
+  exit
+fi
+
+if [ "$1" == "repo-install" ]; then
+  while read line
+  do
+    if [[ "$line" =~ "Name=" ]]; then
+      name=$(echo "$line" | sed -e 's/Name=//')
+      # todo instead of case, use an array with a structure function for manual steps
+      case "$name" in
+      "brew")
+        # the following one-liner requires root. Ick! :(
+        # how to pre-auth this and make sure things are "cool"?
+        # Oh, F. The install script even calls an install-ruby script. Bleh!!!
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)" 
+# TODO, not sure how to deal best with outputs
+#>/dev/null 2>&1
+        exit
+        ;;
+      *)
+        echo "File $name not supported"
+        exit 1 # failure
+      esac
+    fi
+  done
+  echo "No Name= line found"
+  exit 1
+fi
+
+if [ "$1" == "remove" ]; then
+  while read line
+  do
+    if [[ "$line" =~ "Name=" ]]; then
+      name=$(echo "$line" | sed -e 's/Name=//')
+      # todo instead of case, use an array with a structure function for manual steps
+      case "$name" in
+      "brew")
+        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)" 
+#>/dev/null 2>&1
+        # blah! sudo is required here. Meh.
+        sudo rm -rf /home/linuxbrew
+        exit
+        ;;
+      *)
+        echo "Name '$name' not supported"
+        exit 1 # failure
+      esac
+    fi
+  done
+  echo "No Name= line found"
+  exit 1
+fi
+
+echo "ErrorMessage=args '$@' not supported"
+exit 1
