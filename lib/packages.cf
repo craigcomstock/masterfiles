@@ -7,7 +7,7 @@ bundle common package_module_knowledge
 # platforms.
 {
   vars:
-    debian::
+    debian|termux::
       "platform_default" string => "apt_get";
 
     freebsd::

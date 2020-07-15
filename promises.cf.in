@@ -95,7 +95,7 @@ body common control
     (redhat|centos|suse|sles|opensuse|amazon_linux).cfe_yum_package_module_supported.!disable_inventory_package_refresh::
         package_inventory => { $(package_module_knowledge.platform_default) };
 
-    (debian|redhat|suse|sles|opensuse|amazon_linux)::
+    (debian|redhat|suse|sles|opensuse|amazon_linux|termux)::
           package_module => $(package_module_knowledge.platform_default);
 
       # CFEngine 3.12.2+ and 3.14+ have new package module on Windows
