@@ -32,6 +32,10 @@ bundle common package_module_knowledge
     windows::
       "platform_default" string => "msiexec";
 @endif
+@if minimum_version(3.16.1)
+    termux::
+      "platform_default" string => "apt_get";
+@endif
 }
 
 body package_module apt_get
@@ -39,6 +43,10 @@ body package_module apt_get
     query_installed_ifelapsed => "$(def.package_module_query_installed_ifelapsed)";
     query_updates_ifelapsed => "$(def.package_module_query_updates_ifelapsed)";
     #default_options =>  {};
+@if minimum_version(3.16.1)
+    termux::
+      interpreter => "$(paths.prefix)/bin/python";
+@endif
 }
 
 body package_module zypper

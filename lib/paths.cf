@@ -570,6 +570,29 @@ bundle common paths
 
       "path[shadow]"       string => "/etc/security/passwd";
 
+@if minimum_version(3.16.1)
+    termux::
+      # some adjustments for the basics
+      "path[tar]"           string => "/usr/bin/tar";
+      "path[true]"          string => "/usr/bin/true";
+      "path[false]"         string => "/usr/bin/false";
+      "path[sysctl]"        string => "/usr/bin/sysctl";
+
+      # now, mangle the values by prepending the TERMUX_PREFIX
+      "root_path" string => "/data/data/com.termux/files";
+      # a prefix to use elsewhere
+      "prefix_path" string => "$(root_path)$(const.dirsep)usr";
+      "tmp_paths" slist => getindices("path");
+      "tmp_path[$(tmp_paths)]" string => "$(root_path)$(path[$(tmp_paths)])";
+      "path[$(tmp_paths)]" string => "$(tmp_path[$(tmp_paths)])";
+
+    !termux::
+      # reasonable defaults for unix systems to allow for writing
+      # more portable paths between termux and other systems
+      "root_path" string => "/";
+      "prefix_path" string => "/usr";
+@endif
+
     any::
 
       "all_paths"     slist => getindices("path");
