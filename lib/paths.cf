@@ -585,7 +585,7 @@ bundle common paths
       "tmp_path[$(tmp_paths)]" string => "$(root_path)$(path[$(tmp_paths)])";
       "path[$(tmp_paths)]" string => "$(tmp_path[$(tmp_paths)])";
 
-    !termux::
+    !(termux|windows)::
       # reasonable defaults for unix systems to allow for writing
       # more portable paths between termux and other systems
       "root_path" string => "/";
