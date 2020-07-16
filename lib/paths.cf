@@ -570,7 +570,6 @@ bundle common paths
 
       "path[shadow]"       string => "/etc/security/passwd";
 
-@if minimum_version(3.16.1)
     termux::
       # some adjustments for the basics
       "path[tar]"           string => "/usr/bin/tar";
@@ -591,7 +590,6 @@ bundle common paths
       # more portable paths between termux and other systems
       "root_path" string => "/";
       "prefix_path" string => "/usr";
-@endif
 
     any::
 
