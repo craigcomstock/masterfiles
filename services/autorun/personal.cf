@@ -4,9 +4,20 @@ bundle agent personal
     "tags" slist => { "autorun" };
 
   vars:
-    "personal" data => readjson("$(this.promise_dirname)/personal.yaml");
+    "personal" data => readyaml("$(this.promise_dirname)/personal.yaml");
+    "indices" slist => getindices("personal");
+    "values[$(indices)]" string => "$(personal[$(indices)][name])";
+    "names" slist => getvalues("values");
+
+
+  packages:
+    "$(personal[$(indices)][package][name])"
+      policy => "$(personal[$(indices)][package][policy])",
+      version => "$(personal[$(indices)][package][version])";
 
   reports:
     "hi from personal";
-    "$(with)" with => "personal";
+#    "$(indices)";
+    "names: $(names)";
+#    "$(with)" with => storejson(personal);
 }

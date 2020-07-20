@@ -1,0 +1,19 @@
+- name: basic user packages
+  package:
+    name:
+      - openssh
+      - mutt
+      - pass
+      - lynx
+      - ed
+      - git
+    policy: present
+    version: latest
+- name: user accounts
+  users:
+    name:
+      - craig
+      - dodge
+      - yj
+      - kim
+      - guest
