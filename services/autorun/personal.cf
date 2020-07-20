@@ -1,0 +1,12 @@
+bundle agent personal
+{
+  meta:
+    "tags" slist => { "autorun" };
+
+  vars:
+    "personal" data => readjson("$(this.promise_dirname)/personal.yaml");
+
+  reports:
+    "hi from personal";
+    "$(with)" with => "personal";
+}

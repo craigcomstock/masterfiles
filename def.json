@@ -1,0 +1,7 @@
+{
+  "classes":
+  {
+    "services_autorun": ["any::"],
+    "cfengine_internal_purge_policies": ["any::"],
+  }
+}
