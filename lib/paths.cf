@@ -595,7 +595,7 @@ bundle common paths
 
       # now, mangle the values by prepending the TERMUX_PREFIX
       "files_path" string => "/data/data/com.termux/files";
-      "root_path" string => "$(root_path)$(const.dirsep)usr";
+      "root_path" string => "$(files_path)$(const.dirsep)usr";
       "tmp_paths" slist => getindices("path");
       "tmp_path[$(tmp_paths)]" string => "$(files_path)$(path[$(tmp_paths)])";
       "path[$(tmp_paths)]" string => "$(tmp_path[$(tmp_paths)])";
