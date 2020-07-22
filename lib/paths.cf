@@ -595,7 +595,10 @@ bundle common paths
 
       # now, mangle the values by prepending the TERMUX_PREFIX
       "files_path" string => "/data/data/com.termux/files";
-      "root_path" string => "$(files_path)$(const.dirsep)usr";
+      "etc_path" string => "$(files_path)/usr/etc";
+      "tmp_path" string => "$(files_path)/usr/tmp";
+      "bin_path" string => "$(files_path)/usr/bin";
+      "var_path" string => "$(files_path)/usr/var";
       "tmp_paths" slist => getindices("path");
       "tmp_path[$(tmp_paths)]" string => "$(files_path)$(path[$(tmp_paths)])";
       "path[$(tmp_paths)]" string => "$(tmp_path[$(tmp_paths)])";
@@ -603,7 +606,10 @@ bundle common paths
     !(termux|windows)::
       # reasonable defaults for unix systems to allow for writing
       # more portable paths between termux and other systems
-      "root_path" string => "";
+      "etc_path" string => "/etc";
+      "tmp_path" string => "/tmp";
+      "bin_path" string => "/bin";
+      "var_path" string => "/var";
 
     any::
 
