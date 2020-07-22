@@ -26,7 +26,7 @@ bundle common paths
 # }
 # ```
 #
-# Additionally a `root_path` entry is present in the `path` array to aid in policy
+# Additionally a `root_path` entry is present in the `paths` bundle to aid in policy
 # sharing between unix systems and Android Termux systems.
 #
 # **Example:**
@@ -603,7 +603,7 @@ bundle common paths
     !(termux|windows)::
       # reasonable defaults for unix systems to allow for writing
       # more portable paths between termux and other systems
-      "root_path" string => "/";
+      "root_path" string => "";
 
     any::
 
