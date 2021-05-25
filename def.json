@@ -1,8 +1,7 @@
 {
 
   "classes": {
-    "cfengine_internal_masterfiles_update": [ "am_policy_hub::" ],
-
+    "cfengine_internal_masterfiles_update": [ "any::" ],
     "services_autorun": ["any::"],
     "cfengine_internal_purge_policies": ["any::"],
   },
@@ -10,6 +9,7 @@
     "control_common_update_bundlesequence_end": [ "cfe_internal_update_from_repository" ],
 "control_executor_splaytime": "1",
     "control_executor_schedule": ["any::"],
-    "control_hub_hub_schedule": ["any::"]
+    "control_hub_hub_schedule": ["any::"],
+    "craig": "one"
   }
 }
