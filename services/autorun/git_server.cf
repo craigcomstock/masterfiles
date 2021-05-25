@@ -1,0 +1,24 @@
+bundle agent git_server
+{
+  meta:
+    "tags" slist => { "autorun" };
+  vars:
+    "_repos" slist => {
+      "dotfiles",
+      "journal",
+      "personal-policy"
+     };
+    "_basedir" string => "/srv/git";
+  files:
+    "$(_basedir)$(const.dirsep)."
+      create => "true",
+      action => warn;
+    "$(_basedir)$(const.dirsep)$(_repos).git$(const.dirsep)."
+      create => "true",
+      action => warn;
+}
+
+body action warn
+{
+  action_policy => "warn";
+}
