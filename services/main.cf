@@ -12,5 +12,5 @@ bundle agent main
     # Activate your custom policies here
 
   reports:
-    "hello3";
+    "hello4";
 }
