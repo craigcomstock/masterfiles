@@ -1,7 +1,7 @@
 {
 
   "classes": {
-    "cfengine_internal_masterfiles_update": [ "any::" ],
+    "cfengine_internal_masterfiles_update": [ "policy_server::" ],
     "services_autorun": ["any::"],
     "cfengine_internal_purge_policies": ["any::"]
   },
