@@ -1,0 +1,439 @@
+ warning: Bootstrapping to loopback interface (localhost), other hosts will not be able to bootstrap to this server
+    info: Removing all files in '/var/cfengine/inputs'
+    info: Writing built-in failsafe policy to '/var/cfengine/inputs/failsafe.cf'
+    info: Assuming role as policy server, with policy distribution point at: /var/cfengine/masterfiles
+    info: Created directory '/var/cfengine/inputs/templates'
+    info: Copied file '/var/cfengine/masterfiles/templates/json_multiline.mustache' to '/var/cfengine/inputs/templates/json_multiline.mustache.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/templates/json_multiline.mustache.cfnew' to '/var/cfengine/inputs/templates/json_multiline.mustache'
+    info: Updated file '/var/cfengine/inputs/templates/json_multiline.mustache' from 'localhost:/var/cfengine/masterfiles/templates/json_multiline.mustache'
+    info: Copied file '/var/cfengine/masterfiles/templates/cf-serverd.service.mustache' to '/var/cfengine/inputs/templates/cf-serverd.service.mustache.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/templates/cf-serverd.service.mustache.cfnew' to '/var/cfengine/inputs/templates/cf-serverd.service.mustache'
+    info: Updated file '/var/cfengine/inputs/templates/cf-serverd.service.mustache' from 'localhost:/var/cfengine/masterfiles/templates/cf-serverd.service.mustache'
+    info: Copied file '/var/cfengine/masterfiles/templates/vercmp.ps1' to '/var/cfengine/inputs/templates/vercmp.ps1.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/templates/vercmp.ps1.cfnew' to '/var/cfengine/inputs/templates/vercmp.ps1'
+    info: Updated file '/var/cfengine/inputs/templates/vercmp.ps1' from 'localhost:/var/cfengine/masterfiles/templates/vercmp.ps1'
+    info: Copied file '/var/cfengine/masterfiles/templates/cf-monitord.service.mustache' to '/var/cfengine/inputs/templates/cf-monitord.service.mustache.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/templates/cf-monitord.service.mustache.cfnew' to '/var/cfengine/inputs/templates/cf-monitord.service.mustache'
+    info: Updated file '/var/cfengine/inputs/templates/cf-monitord.service.mustache' from 'localhost:/var/cfengine/masterfiles/templates/cf-monitord.service.mustache'
+    info: Copied file '/var/cfengine/masterfiles/templates/cf-hub.service.mustache' to '/var/cfengine/inputs/templates/cf-hub.service.mustache.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/templates/cf-hub.service.mustache.cfnew' to '/var/cfengine/inputs/templates/cf-hub.service.mustache'
+    info: Updated file '/var/cfengine/inputs/templates/cf-hub.service.mustache' from 'localhost:/var/cfengine/masterfiles/templates/cf-hub.service.mustache'
+    info: Copied file '/var/cfengine/masterfiles/templates/json_serial.mustache' to '/var/cfengine/inputs/templates/json_serial.mustache.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/templates/json_serial.mustache.cfnew' to '/var/cfengine/inputs/templates/json_serial.mustache'
+    info: Updated file '/var/cfengine/inputs/templates/json_serial.mustache' from 'localhost:/var/cfengine/masterfiles/templates/json_serial.mustache'
+    info: Copied file '/var/cfengine/masterfiles/templates/host_info_report.mustache' to '/var/cfengine/inputs/templates/host_info_report.mustache.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/templates/host_info_report.mustache.cfnew' to '/var/cfengine/inputs/templates/host_info_report.mustache'
+    info: Updated file '/var/cfengine/inputs/templates/host_info_report.mustache' from 'localhost:/var/cfengine/masterfiles/templates/host_info_report.mustache'
+    info: Copied file '/var/cfengine/masterfiles/templates/cfengine_watchdog.mustache' to '/var/cfengine/inputs/templates/cfengine_watchdog.mustache.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/templates/cfengine_watchdog.mustache.cfnew' to '/var/cfengine/inputs/templates/cfengine_watchdog.mustache'
+    info: Updated file '/var/cfengine/inputs/templates/cfengine_watchdog.mustache' from 'localhost:/var/cfengine/masterfiles/templates/cfengine_watchdog.mustache'
+    info: Created directory '/var/cfengine/inputs/templates/federated_reporting'
+    info: Copied file '/var/cfengine/masterfiles/templates/federated_reporting/10-base_filter.sed' to '/var/cfengine/inputs/templates/federated_reporting/10-base_filter.sed.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/templates/federated_reporting/10-base_filter.sed.cfnew' to '/var/cfengine/inputs/templates/federated_reporting/10-base_filter.sed'
+    info: Updated file '/var/cfengine/inputs/templates/federated_reporting/10-base_filter.sed' from 'localhost:/var/cfengine/masterfiles/templates/federated_reporting/10-base_filter.sed'
+    info: Copied file '/var/cfengine/masterfiles/templates/federated_reporting/log.sh.mustache' to '/var/cfengine/inputs/templates/federated_reporting/log.sh.mustache.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/templates/federated_reporting/log.sh.mustache.cfnew' to '/var/cfengine/inputs/templates/federated_reporting/log.sh.mustache'
+    info: Updated file '/var/cfengine/inputs/templates/federated_reporting/log.sh.mustache' from 'localhost:/var/cfengine/masterfiles/templates/federated_reporting/log.sh.mustache'
+    info: Copied file '/var/cfengine/masterfiles/templates/federated_reporting/transport.sh' to '/var/cfengine/inputs/templates/federated_reporting/transport.sh.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/templates/federated_reporting/transport.sh.cfnew' to '/var/cfengine/inputs/templates/federated_reporting/transport.sh'
+    info: Updated file '/var/cfengine/inputs/templates/federated_reporting/transport.sh' from 'localhost:/var/cfengine/masterfiles/templates/federated_reporting/transport.sh'
+    info: Copied file '/var/cfengine/masterfiles/templates/federated_reporting/psql_wrapper.sh.mustache' to '/var/cfengine/inputs/templates/federated_reporting/psql_wrapper.sh.mustache.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/templates/federated_reporting/psql_wrapper.sh.mustache.cfnew' to '/var/cfengine/inputs/templates/federated_reporting/psql_wrapper.sh.mustache'
+    info: Updated file '/var/cfengine/inputs/templates/federated_reporting/psql_wrapper.sh.mustache' from 'localhost:/var/cfengine/masterfiles/templates/federated_reporting/psql_wrapper.sh.mustache'
+    info: Copied file '/var/cfengine/masterfiles/templates/federated_reporting/import_file.sh' to '/var/cfengine/inputs/templates/federated_reporting/import_file.sh.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/templates/federated_reporting/import_file.sh.cfnew' to '/var/cfengine/inputs/templates/federated_reporting/import_file.sh'
+    info: Updated file '/var/cfengine/inputs/templates/federated_reporting/import_file.sh' from 'localhost:/var/cfengine/masterfiles/templates/federated_reporting/import_file.sh'
+    info: Copied file '/var/cfengine/masterfiles/templates/federated_reporting/config.sh.mustache' to '/var/cfengine/inputs/templates/federated_reporting/config.sh.mustache.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/templates/federated_reporting/config.sh.mustache.cfnew' to '/var/cfengine/inputs/templates/federated_reporting/config.sh.mustache'
+    info: Updated file '/var/cfengine/inputs/templates/federated_reporting/config.sh.mustache' from 'localhost:/var/cfengine/masterfiles/templates/federated_reporting/config.sh.mustache'
+    info: Copied file '/var/cfengine/masterfiles/templates/federated_reporting/pull_dumps_from.sh' to '/var/cfengine/inputs/templates/federated_reporting/pull_dumps_from.sh.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/templates/federated_reporting/pull_dumps_from.sh.cfnew' to '/var/cfengine/inputs/templates/federated_reporting/pull_dumps_from.sh'
+    info: Updated file '/var/cfengine/inputs/templates/federated_reporting/pull_dumps_from.sh' from 'localhost:/var/cfengine/masterfiles/templates/federated_reporting/pull_dumps_from.sh'
+    info: Copied file '/var/cfengine/masterfiles/templates/federated_reporting/parallel.sh' to '/var/cfengine/inputs/templates/federated_reporting/parallel.sh.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/templates/federated_reporting/parallel.sh.cfnew' to '/var/cfengine/inputs/templates/federated_reporting/parallel.sh'
+    info: Updated file '/var/cfengine/inputs/templates/federated_reporting/parallel.sh' from 'localhost:/var/cfengine/masterfiles/templates/federated_reporting/parallel.sh'
+    info: Copied file '/var/cfengine/masterfiles/templates/federated_reporting/50-merge_inserts.awk' to '/var/cfengine/inputs/templates/federated_reporting/50-merge_inserts.awk.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/templates/federated_reporting/50-merge_inserts.awk.cfnew' to '/var/cfengine/inputs/templates/federated_reporting/50-merge_inserts.awk'
+    info: Updated file '/var/cfengine/inputs/templates/federated_reporting/50-merge_inserts.awk' from 'localhost:/var/cfengine/masterfiles/templates/federated_reporting/50-merge_inserts.awk'
+    info: Copied file '/var/cfengine/masterfiles/templates/federated_reporting/import.sh' to '/var/cfengine/inputs/templates/federated_reporting/import.sh.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/templates/federated_reporting/import.sh.cfnew' to '/var/cfengine/inputs/templates/federated_reporting/import.sh'
+    info: Updated file '/var/cfengine/inputs/templates/federated_reporting/import.sh' from 'localhost:/var/cfengine/masterfiles/templates/federated_reporting/import.sh'
+    info: Copied file '/var/cfengine/masterfiles/templates/federated_reporting/dump.sh' to '/var/cfengine/inputs/templates/federated_reporting/dump.sh.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/templates/federated_reporting/dump.sh.cfnew' to '/var/cfengine/inputs/templates/federated_reporting/dump.sh'
+    info: Updated file '/var/cfengine/inputs/templates/federated_reporting/dump.sh' from 'localhost:/var/cfengine/masterfiles/templates/federated_reporting/dump.sh'
+    info: Copied file '/var/cfengine/masterfiles/templates/cf-apache.service.mustache' to '/var/cfengine/inputs/templates/cf-apache.service.mustache.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/templates/cf-apache.service.mustache.cfnew' to '/var/cfengine/inputs/templates/cf-apache.service.mustache'
+    info: Updated file '/var/cfengine/inputs/templates/cf-apache.service.mustache' from 'localhost:/var/cfengine/masterfiles/templates/cf-apache.service.mustache'
+    info: Copied file '/var/cfengine/masterfiles/templates/cf-postgres.service.mustache' to '/var/cfengine/inputs/templates/cf-postgres.service.mustache.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/templates/cf-postgres.service.mustache.cfnew' to '/var/cfengine/inputs/templates/cf-postgres.service.mustache'
+    info: Updated file '/var/cfengine/inputs/templates/cf-postgres.service.mustache' from 'localhost:/var/cfengine/masterfiles/templates/cf-postgres.service.mustache'
+    info: Copied file '/var/cfengine/masterfiles/templates/cfengine3.service.mustache' to '/var/cfengine/inputs/templates/cfengine3.service.mustache.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/templates/cfengine3.service.mustache.cfnew' to '/var/cfengine/inputs/templates/cfengine3.service.mustache'
+    info: Updated file '/var/cfengine/inputs/templates/cfengine3.service.mustache' from 'localhost:/var/cfengine/masterfiles/templates/cfengine3.service.mustache'
+    info: Copied file '/var/cfengine/masterfiles/templates/cf-runalerts.service.mustache' to '/var/cfengine/inputs/templates/cf-runalerts.service.mustache.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/templates/cf-runalerts.service.mustache.cfnew' to '/var/cfengine/inputs/templates/cf-runalerts.service.mustache'
+    info: Updated file '/var/cfengine/inputs/templates/cf-runalerts.service.mustache' from 'localhost:/var/cfengine/masterfiles/templates/cf-runalerts.service.mustache'
+    info: Copied file '/var/cfengine/masterfiles/templates/cf-execd.service.mustache' to '/var/cfengine/inputs/templates/cf-execd.service.mustache.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/templates/cf-execd.service.mustache.cfnew' to '/var/cfengine/inputs/templates/cf-execd.service.mustache'
+    info: Updated file '/var/cfengine/inputs/templates/cf-execd.service.mustache' from 'localhost:/var/cfengine/masterfiles/templates/cf-execd.service.mustache'
+    info: Created directory '/var/cfengine/inputs/services'
+    info: Copied file '/var/cfengine/masterfiles/services/init.cf' to '/var/cfengine/inputs/services/init.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/services/init.cf.cfnew' to '/var/cfengine/inputs/services/init.cf'
+    info: Updated file '/var/cfengine/inputs/services/init.cf' from 'localhost:/var/cfengine/masterfiles/services/init.cf'
+    info: Created directory '/var/cfengine/inputs/services/autorun'
+    info: Copied file '/var/cfengine/masterfiles/services/autorun/hello.cf' to '/var/cfengine/inputs/services/autorun/hello.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/services/autorun/hello.cf.cfnew' to '/var/cfengine/inputs/services/autorun/hello.cf'
+    info: Updated file '/var/cfengine/inputs/services/autorun/hello.cf' from 'localhost:/var/cfengine/masterfiles/services/autorun/hello.cf'
+    info: Copied file '/var/cfengine/masterfiles/services/main.cf' to '/var/cfengine/inputs/services/main.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/services/main.cf.cfnew' to '/var/cfengine/inputs/services/main.cf'
+    info: Updated file '/var/cfengine/inputs/services/main.cf' from 'localhost:/var/cfengine/masterfiles/services/main.cf'
+    info: Copied file '/var/cfengine/masterfiles/promises.cf' to '/var/cfengine/inputs/promises.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/promises.cf.cfnew' to '/var/cfengine/inputs/promises.cf'
+    info: Updated file '/var/cfengine/inputs/promises.cf' from 'localhost:/var/cfengine/masterfiles/promises.cf'
+    info: Copied file '/var/cfengine/masterfiles/standalone_self_upgrade.cf' to '/var/cfengine/inputs/standalone_self_upgrade.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/standalone_self_upgrade.cf.cfnew' to '/var/cfengine/inputs/standalone_self_upgrade.cf'
+    info: Updated file '/var/cfengine/inputs/standalone_self_upgrade.cf' from 'localhost:/var/cfengine/masterfiles/standalone_self_upgrade.cf'
+    info: Created directory '/var/cfengine/inputs/lib'
+    info: Copied file '/var/cfengine/masterfiles/lib/common.cf' to '/var/cfengine/inputs/lib/common.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/lib/common.cf.cfnew' to '/var/cfengine/inputs/lib/common.cf'
+    info: Updated file '/var/cfengine/inputs/lib/common.cf' from 'localhost:/var/cfengine/masterfiles/lib/common.cf'
+    info: Copied file '/var/cfengine/masterfiles/lib/edit_xml.cf' to '/var/cfengine/inputs/lib/edit_xml.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/lib/edit_xml.cf.cfnew' to '/var/cfengine/inputs/lib/edit_xml.cf'
+    info: Updated file '/var/cfengine/inputs/lib/edit_xml.cf' from 'localhost:/var/cfengine/masterfiles/lib/edit_xml.cf'
+    info: Copied file '/var/cfengine/masterfiles/lib/commands.cf' to '/var/cfengine/inputs/lib/commands.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/lib/commands.cf.cfnew' to '/var/cfengine/inputs/lib/commands.cf'
+    info: Updated file '/var/cfengine/inputs/lib/commands.cf' from 'localhost:/var/cfengine/masterfiles/lib/commands.cf'
+    info: Copied file '/var/cfengine/masterfiles/lib/cfe_internal_hub.cf' to '/var/cfengine/inputs/lib/cfe_internal_hub.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/lib/cfe_internal_hub.cf.cfnew' to '/var/cfengine/inputs/lib/cfe_internal_hub.cf'
+    info: Updated file '/var/cfengine/inputs/lib/cfe_internal_hub.cf' from 'localhost:/var/cfengine/masterfiles/lib/cfe_internal_hub.cf'
+    info: Copied file '/var/cfengine/masterfiles/lib/packages.cf' to '/var/cfengine/inputs/lib/packages.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/lib/packages.cf.cfnew' to '/var/cfengine/inputs/lib/packages.cf'
+    info: Updated file '/var/cfengine/inputs/lib/packages.cf' from 'localhost:/var/cfengine/masterfiles/lib/packages.cf'
+    info: Copied file '/var/cfengine/masterfiles/lib/storage.cf' to '/var/cfengine/inputs/lib/storage.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/lib/storage.cf.cfnew' to '/var/cfengine/inputs/lib/storage.cf'
+    info: Updated file '/var/cfengine/inputs/lib/storage.cf' from 'localhost:/var/cfengine/masterfiles/lib/storage.cf'
+    info: Copied file '/var/cfengine/masterfiles/lib/packages-ENT-3719.cf' to '/var/cfengine/inputs/lib/packages-ENT-3719.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/lib/packages-ENT-3719.cf.cfnew' to '/var/cfengine/inputs/lib/packages-ENT-3719.cf'
+    info: Updated file '/var/cfengine/inputs/lib/packages-ENT-3719.cf' from 'localhost:/var/cfengine/masterfiles/lib/packages-ENT-3719.cf'
+    info: Copied file '/var/cfengine/masterfiles/lib/monitor.cf' to '/var/cfengine/inputs/lib/monitor.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/lib/monitor.cf.cfnew' to '/var/cfengine/inputs/lib/monitor.cf'
+    info: Updated file '/var/cfengine/inputs/lib/monitor.cf' from 'localhost:/var/cfengine/masterfiles/lib/monitor.cf'
+    info: Copied file '/var/cfengine/masterfiles/lib/autorun.cf' to '/var/cfengine/inputs/lib/autorun.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/lib/autorun.cf.cfnew' to '/var/cfengine/inputs/lib/autorun.cf'
+    info: Updated file '/var/cfengine/inputs/lib/autorun.cf' from 'localhost:/var/cfengine/masterfiles/lib/autorun.cf'
+    info: Copied file '/var/cfengine/masterfiles/lib/stdlib.cf' to '/var/cfengine/inputs/lib/stdlib.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/lib/stdlib.cf.cfnew' to '/var/cfengine/inputs/lib/stdlib.cf'
+    info: Updated file '/var/cfengine/inputs/lib/stdlib.cf' from 'localhost:/var/cfengine/masterfiles/lib/stdlib.cf'
+    info: Copied file '/var/cfengine/masterfiles/lib/paths.cf' to '/var/cfengine/inputs/lib/paths.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/lib/paths.cf.cfnew' to '/var/cfengine/inputs/lib/paths.cf'
+    info: Updated file '/var/cfengine/inputs/lib/paths.cf' from 'localhost:/var/cfengine/masterfiles/lib/paths.cf'
+    info: Copied file '/var/cfengine/masterfiles/lib/bundles.cf' to '/var/cfengine/inputs/lib/bundles.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/lib/bundles.cf.cfnew' to '/var/cfengine/inputs/lib/bundles.cf'
+    info: Updated file '/var/cfengine/inputs/lib/bundles.cf' from 'localhost:/var/cfengine/masterfiles/lib/bundles.cf'
+    info: Copied file '/var/cfengine/masterfiles/lib/files.cf' to '/var/cfengine/inputs/lib/files.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/lib/files.cf.cfnew' to '/var/cfengine/inputs/lib/files.cf'
+    info: Updated file '/var/cfengine/inputs/lib/files.cf' from 'localhost:/var/cfengine/masterfiles/lib/files.cf'
+    info: Copied file '/var/cfengine/masterfiles/lib/databases.cf' to '/var/cfengine/inputs/lib/databases.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/lib/databases.cf.cfnew' to '/var/cfengine/inputs/lib/databases.cf'
+    info: Updated file '/var/cfengine/inputs/lib/databases.cf' from 'localhost:/var/cfengine/masterfiles/lib/databases.cf'
+    info: Copied file '/var/cfengine/masterfiles/lib/cfengine_enterprise_hub_ha.cf' to '/var/cfengine/inputs/lib/cfengine_enterprise_hub_ha.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/lib/cfengine_enterprise_hub_ha.cf.cfnew' to '/var/cfengine/inputs/lib/cfengine_enterprise_hub_ha.cf'
+    info: Updated file '/var/cfengine/inputs/lib/cfengine_enterprise_hub_ha.cf' from 'localhost:/var/cfengine/masterfiles/lib/cfengine_enterprise_hub_ha.cf'
+    info: Copied file '/var/cfengine/masterfiles/lib/feature.cf' to '/var/cfengine/inputs/lib/feature.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/lib/feature.cf.cfnew' to '/var/cfengine/inputs/lib/feature.cf'
+    info: Updated file '/var/cfengine/inputs/lib/feature.cf' from 'localhost:/var/cfengine/masterfiles/lib/feature.cf'
+    info: Copied file '/var/cfengine/masterfiles/lib/guest_environments.cf' to '/var/cfengine/inputs/lib/guest_environments.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/lib/guest_environments.cf.cfnew' to '/var/cfengine/inputs/lib/guest_environments.cf'
+    info: Updated file '/var/cfengine/inputs/lib/guest_environments.cf' from 'localhost:/var/cfengine/masterfiles/lib/guest_environments.cf'
+    info: Copied file '/var/cfengine/masterfiles/lib/vcs.cf' to '/var/cfengine/inputs/lib/vcs.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/lib/vcs.cf.cfnew' to '/var/cfengine/inputs/lib/vcs.cf'
+    info: Updated file '/var/cfengine/inputs/lib/vcs.cf' from 'localhost:/var/cfengine/masterfiles/lib/vcs.cf'
+    info: Copied file '/var/cfengine/masterfiles/lib/users.cf' to '/var/cfengine/inputs/lib/users.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/lib/users.cf.cfnew' to '/var/cfengine/inputs/lib/users.cf'
+    info: Updated file '/var/cfengine/inputs/lib/users.cf' from 'localhost:/var/cfengine/masterfiles/lib/users.cf'
+    info: Copied file '/var/cfengine/masterfiles/lib/testing.cf' to '/var/cfengine/inputs/lib/testing.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/lib/testing.cf.cfnew' to '/var/cfengine/inputs/lib/testing.cf'
+    info: Updated file '/var/cfengine/inputs/lib/testing.cf' from 'localhost:/var/cfengine/masterfiles/lib/testing.cf'
+    info: Copied file '/var/cfengine/masterfiles/lib/processes.cf' to '/var/cfengine/inputs/lib/processes.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/lib/processes.cf.cfnew' to '/var/cfengine/inputs/lib/processes.cf'
+    info: Updated file '/var/cfengine/inputs/lib/processes.cf' from 'localhost:/var/cfengine/masterfiles/lib/processes.cf'
+    info: Copied file '/var/cfengine/masterfiles/lib/cfe_internal.cf' to '/var/cfengine/inputs/lib/cfe_internal.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/lib/cfe_internal.cf.cfnew' to '/var/cfengine/inputs/lib/cfe_internal.cf'
+    info: Updated file '/var/cfengine/inputs/lib/cfe_internal.cf' from 'localhost:/var/cfengine/masterfiles/lib/cfe_internal.cf'
+    info: Copied file '/var/cfengine/masterfiles/lib/examples.cf' to '/var/cfengine/inputs/lib/examples.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/lib/examples.cf.cfnew' to '/var/cfengine/inputs/lib/examples.cf'
+    info: Updated file '/var/cfengine/inputs/lib/examples.cf' from 'localhost:/var/cfengine/masterfiles/lib/examples.cf'
+    info: Copied file '/var/cfengine/masterfiles/lib/services.cf' to '/var/cfengine/inputs/lib/services.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/lib/services.cf.cfnew' to '/var/cfengine/inputs/lib/services.cf'
+    info: Updated file '/var/cfengine/inputs/lib/services.cf' from 'localhost:/var/cfengine/masterfiles/lib/services.cf'
+    info: Copied file '/var/cfengine/masterfiles/lib/reports.cf' to '/var/cfengine/inputs/lib/reports.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/lib/reports.cf.cfnew' to '/var/cfengine/inputs/lib/reports.cf'
+    info: Updated file '/var/cfengine/inputs/lib/reports.cf' from 'localhost:/var/cfengine/masterfiles/lib/reports.cf'
+    info: Copied file '/var/cfengine/masterfiles/lib/event.cf' to '/var/cfengine/inputs/lib/event.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/lib/event.cf.cfnew' to '/var/cfengine/inputs/lib/event.cf'
+    info: Updated file '/var/cfengine/inputs/lib/event.cf' from 'localhost:/var/cfengine/masterfiles/lib/event.cf'
+    info: Created directory '/var/cfengine/inputs/build'
+    info: Created directory '/var/cfengine/inputs/build/modules'
+    info: Created directory '/var/cfengine/inputs/build/modules/packages'
+    info: Copied file '/var/cfengine/masterfiles/build/modules/packages/msiexec.bat' to '/var/cfengine/inputs/build/modules/packages/msiexec.bat.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/build/modules/packages/msiexec.bat.cfnew' to '/var/cfengine/inputs/build/modules/packages/msiexec.bat'
+    info: Updated file '/var/cfengine/inputs/build/modules/packages/msiexec.bat' from 'localhost:/var/cfengine/masterfiles/build/modules/packages/msiexec.bat'
+    info: Copied file '/var/cfengine/masterfiles/build/modules/packages/zypper' to '/var/cfengine/inputs/build/modules/packages/zypper.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/build/modules/packages/zypper.cfnew' to '/var/cfengine/inputs/build/modules/packages/zypper'
+    info: Updated file '/var/cfengine/inputs/build/modules/packages/zypper' from 'localhost:/var/cfengine/masterfiles/build/modules/packages/zypper'
+    info: Copied file '/var/cfengine/masterfiles/build/modules/packages/nimclient' to '/var/cfengine/inputs/build/modules/packages/nimclient.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/build/modules/packages/nimclient.cfnew' to '/var/cfengine/inputs/build/modules/packages/nimclient'
+    info: Updated file '/var/cfengine/inputs/build/modules/packages/nimclient' from 'localhost:/var/cfengine/masterfiles/build/modules/packages/nimclient'
+    info: Copied file '/var/cfengine/masterfiles/build/modules/packages/msiexec-list.vbs' to '/var/cfengine/inputs/build/modules/packages/msiexec-list.vbs.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/build/modules/packages/msiexec-list.vbs.cfnew' to '/var/cfengine/inputs/build/modules/packages/msiexec-list.vbs'
+    info: Updated file '/var/cfengine/inputs/build/modules/packages/msiexec-list.vbs' from 'localhost:/var/cfengine/masterfiles/build/modules/packages/msiexec-list.vbs'
+    info: Copied file '/var/cfengine/masterfiles/build/modules/packages/apt_get' to '/var/cfengine/inputs/build/modules/packages/apt_get.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/build/modules/packages/apt_get.cfnew' to '/var/cfengine/inputs/build/modules/packages/apt_get'
+    info: Updated file '/var/cfengine/inputs/build/modules/packages/apt_get' from 'localhost:/var/cfengine/masterfiles/build/modules/packages/apt_get'
+    info: Copied file '/var/cfengine/masterfiles/build/modules/packages/pkg' to '/var/cfengine/inputs/build/modules/packages/pkg.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/build/modules/packages/pkg.cfnew' to '/var/cfengine/inputs/build/modules/packages/pkg'
+    info: Updated file '/var/cfengine/inputs/build/modules/packages/pkg' from 'localhost:/var/cfengine/masterfiles/build/modules/packages/pkg'
+    info: Copied file '/var/cfengine/masterfiles/build/modules/packages/snap' to '/var/cfengine/inputs/build/modules/packages/snap.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/build/modules/packages/snap.cfnew' to '/var/cfengine/inputs/build/modules/packages/snap'
+    info: Updated file '/var/cfengine/inputs/build/modules/packages/snap' from 'localhost:/var/cfengine/masterfiles/build/modules/packages/snap'
+    info: Copied file '/var/cfengine/masterfiles/build/modules/packages/freebsd_ports' to '/var/cfengine/inputs/build/modules/packages/freebsd_ports.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/build/modules/packages/freebsd_ports.cfnew' to '/var/cfengine/inputs/build/modules/packages/freebsd_ports'
+    info: Updated file '/var/cfengine/inputs/build/modules/packages/freebsd_ports' from 'localhost:/var/cfengine/masterfiles/build/modules/packages/freebsd_ports'
+    info: Copied file '/var/cfengine/masterfiles/build/modules/packages/yum' to '/var/cfengine/inputs/build/modules/packages/yum.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/build/modules/packages/yum.cfnew' to '/var/cfengine/inputs/build/modules/packages/yum'
+    info: Updated file '/var/cfengine/inputs/build/modules/packages/yum' from 'localhost:/var/cfengine/masterfiles/build/modules/packages/yum'
+    info: Copied file '/var/cfengine/masterfiles/build/modules/packages/WiRunSQL.vbs' to '/var/cfengine/inputs/build/modules/packages/WiRunSQL.vbs.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/build/modules/packages/WiRunSQL.vbs.cfnew' to '/var/cfengine/inputs/build/modules/packages/WiRunSQL.vbs'
+    info: Updated file '/var/cfengine/inputs/build/modules/packages/WiRunSQL.vbs' from 'localhost:/var/cfengine/masterfiles/build/modules/packages/WiRunSQL.vbs'
+    info: Copied file '/var/cfengine/masterfiles/build/modules/packages/slackpkg' to '/var/cfengine/inputs/build/modules/packages/slackpkg.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/build/modules/packages/slackpkg.cfnew' to '/var/cfengine/inputs/build/modules/packages/slackpkg'
+    info: Updated file '/var/cfengine/inputs/build/modules/packages/slackpkg' from 'localhost:/var/cfengine/masterfiles/build/modules/packages/slackpkg'
+    info: Copied file '/var/cfengine/masterfiles/build/modules/packages/pkgsrc' to '/var/cfengine/inputs/build/modules/packages/pkgsrc.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/build/modules/packages/pkgsrc.cfnew' to '/var/cfengine/inputs/build/modules/packages/pkgsrc'
+    info: Updated file '/var/cfengine/inputs/build/modules/packages/pkgsrc' from 'localhost:/var/cfengine/masterfiles/build/modules/packages/pkgsrc'
+    info: Copied file '/var/cfengine/masterfiles/build/modules/packages/apk' to '/var/cfengine/inputs/build/modules/packages/apk.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/build/modules/packages/apk.cfnew' to '/var/cfengine/inputs/build/modules/packages/apk'
+    info: Updated file '/var/cfengine/inputs/build/modules/packages/apk' from 'localhost:/var/cfengine/masterfiles/build/modules/packages/apk'
+    info: Created directory '/var/cfengine/inputs/modules'
+    info: Created directory '/var/cfengine/inputs/modules/packages'
+    info: Created directory '/var/cfengine/inputs/modules/packages/vendored'
+    info: Copied file '/var/cfengine/masterfiles/modules/packages/vendored/yum.mustache' to '/var/cfengine/inputs/modules/packages/vendored/yum.mustache.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/modules/packages/vendored/yum.mustache.cfnew' to '/var/cfengine/inputs/modules/packages/vendored/yum.mustache'
+    info: Updated file '/var/cfengine/inputs/modules/packages/vendored/yum.mustache' from 'localhost:/var/cfengine/masterfiles/modules/packages/vendored/yum.mustache'
+    info: Copied file '/var/cfengine/masterfiles/modules/packages/vendored/pkgsrc.mustache' to '/var/cfengine/inputs/modules/packages/vendored/pkgsrc.mustache.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/modules/packages/vendored/pkgsrc.mustache.cfnew' to '/var/cfengine/inputs/modules/packages/vendored/pkgsrc.mustache'
+    info: Updated file '/var/cfengine/inputs/modules/packages/vendored/pkgsrc.mustache' from 'localhost:/var/cfengine/masterfiles/modules/packages/vendored/pkgsrc.mustache'
+    info: Copied file '/var/cfengine/masterfiles/modules/packages/vendored/freebsd_ports.mustache' to '/var/cfengine/inputs/modules/packages/vendored/freebsd_ports.mustache.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/modules/packages/vendored/freebsd_ports.mustache.cfnew' to '/var/cfengine/inputs/modules/packages/vendored/freebsd_ports.mustache'
+    info: Updated file '/var/cfengine/inputs/modules/packages/vendored/freebsd_ports.mustache' from 'localhost:/var/cfengine/masterfiles/modules/packages/vendored/freebsd_ports.mustache'
+    info: Copied file '/var/cfengine/masterfiles/modules/packages/vendored/apk.mustache' to '/var/cfengine/inputs/modules/packages/vendored/apk.mustache.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/modules/packages/vendored/apk.mustache.cfnew' to '/var/cfengine/inputs/modules/packages/vendored/apk.mustache'
+    info: Updated file '/var/cfengine/inputs/modules/packages/vendored/apk.mustache' from 'localhost:/var/cfengine/masterfiles/modules/packages/vendored/apk.mustache'
+    info: Copied file '/var/cfengine/masterfiles/modules/packages/vendored/WiRunSQL.vbs.mustache' to '/var/cfengine/inputs/modules/packages/vendored/WiRunSQL.vbs.mustache.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/modules/packages/vendored/WiRunSQL.vbs.mustache.cfnew' to '/var/cfengine/inputs/modules/packages/vendored/WiRunSQL.vbs.mustache'
+    info: Updated file '/var/cfengine/inputs/modules/packages/vendored/WiRunSQL.vbs.mustache' from 'localhost:/var/cfengine/masterfiles/modules/packages/vendored/WiRunSQL.vbs.mustache'
+    info: Copied file '/var/cfengine/masterfiles/modules/packages/vendored/slackpkg.mustache' to '/var/cfengine/inputs/modules/packages/vendored/slackpkg.mustache.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/modules/packages/vendored/slackpkg.mustache.cfnew' to '/var/cfengine/inputs/modules/packages/vendored/slackpkg.mustache'
+    info: Updated file '/var/cfengine/inputs/modules/packages/vendored/slackpkg.mustache' from 'localhost:/var/cfengine/masterfiles/modules/packages/vendored/slackpkg.mustache'
+    info: Copied file '/var/cfengine/masterfiles/modules/packages/vendored/msiexec.bat.mustache' to '/var/cfengine/inputs/modules/packages/vendored/msiexec.bat.mustache.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/modules/packages/vendored/msiexec.bat.mustache.cfnew' to '/var/cfengine/inputs/modules/packages/vendored/msiexec.bat.mustache'
+    info: Updated file '/var/cfengine/inputs/modules/packages/vendored/msiexec.bat.mustache' from 'localhost:/var/cfengine/masterfiles/modules/packages/vendored/msiexec.bat.mustache'
+    info: Copied file '/var/cfengine/masterfiles/modules/packages/vendored/msiexec-list.vbs.mustache' to '/var/cfengine/inputs/modules/packages/vendored/msiexec-list.vbs.mustache.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/modules/packages/vendored/msiexec-list.vbs.mustache.cfnew' to '/var/cfengine/inputs/modules/packages/vendored/msiexec-list.vbs.mustache'
+    info: Updated file '/var/cfengine/inputs/modules/packages/vendored/msiexec-list.vbs.mustache' from 'localhost:/var/cfengine/masterfiles/modules/packages/vendored/msiexec-list.vbs.mustache'
+    info: Copied file '/var/cfengine/masterfiles/modules/packages/vendored/apt_get.mustache' to '/var/cfengine/inputs/modules/packages/vendored/apt_get.mustache.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/modules/packages/vendored/apt_get.mustache.cfnew' to '/var/cfengine/inputs/modules/packages/vendored/apt_get.mustache'
+    info: Updated file '/var/cfengine/inputs/modules/packages/vendored/apt_get.mustache' from 'localhost:/var/cfengine/masterfiles/modules/packages/vendored/apt_get.mustache'
+    info: Copied file '/var/cfengine/masterfiles/modules/packages/vendored/snap.mustache' to '/var/cfengine/inputs/modules/packages/vendored/snap.mustache.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/modules/packages/vendored/snap.mustache.cfnew' to '/var/cfengine/inputs/modules/packages/vendored/snap.mustache'
+    info: Updated file '/var/cfengine/inputs/modules/packages/vendored/snap.mustache' from 'localhost:/var/cfengine/masterfiles/modules/packages/vendored/snap.mustache'
+    info: Copied file '/var/cfengine/masterfiles/modules/packages/vendored/pkg.mustache' to '/var/cfengine/inputs/modules/packages/vendored/pkg.mustache.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/modules/packages/vendored/pkg.mustache.cfnew' to '/var/cfengine/inputs/modules/packages/vendored/pkg.mustache'
+    info: Updated file '/var/cfengine/inputs/modules/packages/vendored/pkg.mustache' from 'localhost:/var/cfengine/masterfiles/modules/packages/vendored/pkg.mustache'
+    info: Copied file '/var/cfengine/masterfiles/modules/packages/vendored/nimclient.mustache' to '/var/cfengine/inputs/modules/packages/vendored/nimclient.mustache.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/modules/packages/vendored/nimclient.mustache.cfnew' to '/var/cfengine/inputs/modules/packages/vendored/nimclient.mustache'
+    info: Updated file '/var/cfengine/inputs/modules/packages/vendored/nimclient.mustache' from 'localhost:/var/cfengine/masterfiles/modules/packages/vendored/nimclient.mustache'
+    info: Copied file '/var/cfengine/masterfiles/modules/packages/vendored/zypper.mustache' to '/var/cfengine/inputs/modules/packages/vendored/zypper.mustache.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/modules/packages/vendored/zypper.mustache.cfnew' to '/var/cfengine/inputs/modules/packages/vendored/zypper.mustache'
+    info: Updated file '/var/cfengine/inputs/modules/packages/vendored/zypper.mustache' from 'localhost:/var/cfengine/masterfiles/modules/packages/vendored/zypper.mustache'
+    info: Copied file '/var/cfengine/masterfiles/update.cf' to '/var/cfengine/inputs/update.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/update.cf.cfnew' to '/var/cfengine/inputs/update.cf'
+    info: Updated file '/var/cfengine/inputs/update.cf' from 'localhost:/var/cfengine/masterfiles/update.cf'
+    info: Created directory '/var/cfengine/inputs/cfe_internal'
+    info: Copied file '/var/cfengine/masterfiles/cfe_internal/CFE_cfengine.cf' to '/var/cfengine/inputs/cfe_internal/CFE_cfengine.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/cfe_internal/CFE_cfengine.cf.cfnew' to '/var/cfengine/inputs/cfe_internal/CFE_cfengine.cf'
+    info: Updated file '/var/cfengine/inputs/cfe_internal/CFE_cfengine.cf' from 'localhost:/var/cfengine/masterfiles/cfe_internal/CFE_cfengine.cf'
+    info: Created directory '/var/cfengine/inputs/cfe_internal/update'
+    info: Copied file '/var/cfengine/masterfiles/cfe_internal/update/windows_unattended_upgrade.cf' to '/var/cfengine/inputs/cfe_internal/update/windows_unattended_upgrade.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/cfe_internal/update/windows_unattended_upgrade.cf.cfnew' to '/var/cfengine/inputs/cfe_internal/update/windows_unattended_upgrade.cf'
+    info: Updated file '/var/cfengine/inputs/cfe_internal/update/windows_unattended_upgrade.cf' from 'localhost:/var/cfengine/masterfiles/cfe_internal/update/windows_unattended_upgrade.cf'
+    info: Copied file '/var/cfengine/masterfiles/cfe_internal/update/cfe_internal_update_from_repository.cf' to '/var/cfengine/inputs/cfe_internal/update/cfe_internal_update_from_repository.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/cfe_internal/update/cfe_internal_update_from_repository.cf.cfnew' to '/var/cfengine/inputs/cfe_internal/update/cfe_internal_update_from_repository.cf'
+    info: Updated file '/var/cfengine/inputs/cfe_internal/update/cfe_internal_update_from_repository.cf' from 'localhost:/var/cfengine/masterfiles/cfe_internal/update/cfe_internal_update_from_repository.cf'
+    info: Copied file '/var/cfengine/masterfiles/cfe_internal/update/systemd_units.cf' to '/var/cfengine/inputs/cfe_internal/update/systemd_units.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/cfe_internal/update/systemd_units.cf.cfnew' to '/var/cfengine/inputs/cfe_internal/update/systemd_units.cf'
+    info: Updated file '/var/cfengine/inputs/cfe_internal/update/systemd_units.cf' from 'localhost:/var/cfengine/masterfiles/cfe_internal/update/systemd_units.cf'
+    info: Copied file '/var/cfengine/masterfiles/cfe_internal/update/lib.cf' to '/var/cfengine/inputs/cfe_internal/update/lib.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/cfe_internal/update/lib.cf.cfnew' to '/var/cfengine/inputs/cfe_internal/update/lib.cf'
+    info: Updated file '/var/cfengine/inputs/cfe_internal/update/lib.cf' from 'localhost:/var/cfengine/masterfiles/cfe_internal/update/lib.cf'
+    info: Copied file '/var/cfengine/masterfiles/cfe_internal/update/update_processes.cf' to '/var/cfengine/inputs/cfe_internal/update/update_processes.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/cfe_internal/update/update_processes.cf.cfnew' to '/var/cfengine/inputs/cfe_internal/update/update_processes.cf'
+    info: Updated file '/var/cfengine/inputs/cfe_internal/update/update_processes.cf' from 'localhost:/var/cfengine/masterfiles/cfe_internal/update/update_processes.cf'
+    info: Copied file '/var/cfengine/masterfiles/cfe_internal/update/update_bins.cf' to '/var/cfengine/inputs/cfe_internal/update/update_bins.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/cfe_internal/update/update_bins.cf.cfnew' to '/var/cfengine/inputs/cfe_internal/update/update_bins.cf'
+    info: Updated file '/var/cfengine/inputs/cfe_internal/update/update_bins.cf' from 'localhost:/var/cfengine/masterfiles/cfe_internal/update/update_bins.cf'
+    info: Copied file '/var/cfengine/masterfiles/cfe_internal/update/update_policy.cf' to '/var/cfengine/inputs/cfe_internal/update/update_policy.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/cfe_internal/update/update_policy.cf.cfnew' to '/var/cfengine/inputs/cfe_internal/update/update_policy.cf'
+    info: Updated file '/var/cfengine/inputs/cfe_internal/update/update_policy.cf' from 'localhost:/var/cfengine/masterfiles/cfe_internal/update/update_policy.cf'
+    info: Copied file '/var/cfengine/masterfiles/cfe_internal/update/cfe_internal_dc_workflow.cf' to '/var/cfengine/inputs/cfe_internal/update/cfe_internal_dc_workflow.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/cfe_internal/update/cfe_internal_dc_workflow.cf.cfnew' to '/var/cfengine/inputs/cfe_internal/update/cfe_internal_dc_workflow.cf'
+    info: Updated file '/var/cfengine/inputs/cfe_internal/update/cfe_internal_dc_workflow.cf' from 'localhost:/var/cfengine/masterfiles/cfe_internal/update/cfe_internal_dc_workflow.cf'
+    info: Created directory '/var/cfengine/inputs/cfe_internal/enterprise'
+    info: Copied file '/var/cfengine/masterfiles/cfe_internal/enterprise/CFE_knowledge.cf' to '/var/cfengine/inputs/cfe_internal/enterprise/CFE_knowledge.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/cfe_internal/enterprise/CFE_knowledge.cf.cfnew' to '/var/cfengine/inputs/cfe_internal/enterprise/CFE_knowledge.cf'
+    info: Updated file '/var/cfengine/inputs/cfe_internal/enterprise/CFE_knowledge.cf' from 'localhost:/var/cfengine/masterfiles/cfe_internal/enterprise/CFE_knowledge.cf'
+    info: Created directory '/var/cfengine/inputs/cfe_internal/enterprise/templates'
+    info: Copied file '/var/cfengine/masterfiles/cfe_internal/enterprise/templates/runalerts.php.mustache' to '/var/cfengine/inputs/cfe_internal/enterprise/templates/runalerts.php.mustache.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/cfe_internal/enterprise/templates/runalerts.php.mustache.cfnew' to '/var/cfengine/inputs/cfe_internal/enterprise/templates/runalerts.php.mustache'
+    info: Updated file '/var/cfengine/inputs/cfe_internal/enterprise/templates/runalerts.php.mustache' from 'localhost:/var/cfengine/masterfiles/cfe_internal/enterprise/templates/runalerts.php.mustache'
+    info: Copied file '/var/cfengine/masterfiles/cfe_internal/enterprise/templates/httpd.conf.mustache' to '/var/cfengine/inputs/cfe_internal/enterprise/templates/httpd.conf.mustache.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/cfe_internal/enterprise/templates/httpd.conf.mustache.cfnew' to '/var/cfengine/inputs/cfe_internal/enterprise/templates/httpd.conf.mustache'
+    info: Updated file '/var/cfengine/inputs/cfe_internal/enterprise/templates/httpd.conf.mustache' from 'localhost:/var/cfengine/masterfiles/cfe_internal/enterprise/templates/httpd.conf.mustache'
+    info: Copied file '/var/cfengine/masterfiles/cfe_internal/enterprise/templates/runalerts.sh.mustache' to '/var/cfengine/inputs/cfe_internal/enterprise/templates/runalerts.sh.mustache.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/cfe_internal/enterprise/templates/runalerts.sh.mustache.cfnew' to '/var/cfengine/inputs/cfe_internal/enterprise/templates/runalerts.sh.mustache'
+    info: Updated file '/var/cfengine/inputs/cfe_internal/enterprise/templates/runalerts.sh.mustache' from 'localhost:/var/cfengine/masterfiles/cfe_internal/enterprise/templates/runalerts.sh.mustache'
+    info: Created directory '/var/cfengine/inputs/cfe_internal/enterprise/federation'
+    info: Copied file '/var/cfengine/masterfiles/cfe_internal/enterprise/federation/federation.cf' to '/var/cfengine/inputs/cfe_internal/enterprise/federation/federation.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/cfe_internal/enterprise/federation/federation.cf.cfnew' to '/var/cfengine/inputs/cfe_internal/enterprise/federation/federation.cf'
+    info: Updated file '/var/cfengine/inputs/cfe_internal/enterprise/federation/federation.cf' from 'localhost:/var/cfengine/masterfiles/cfe_internal/enterprise/federation/federation.cf'
+    info: Created directory '/var/cfengine/inputs/cfe_internal/enterprise/ha'
+    info: Copied file '/var/cfengine/masterfiles/cfe_internal/enterprise/ha/ha_update.cf' to '/var/cfengine/inputs/cfe_internal/enterprise/ha/ha_update.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/cfe_internal/enterprise/ha/ha_update.cf.cfnew' to '/var/cfengine/inputs/cfe_internal/enterprise/ha/ha_update.cf'
+    info: Updated file '/var/cfengine/inputs/cfe_internal/enterprise/ha/ha_update.cf' from 'localhost:/var/cfengine/masterfiles/cfe_internal/enterprise/ha/ha_update.cf'
+    info: Copied file '/var/cfengine/masterfiles/cfe_internal/enterprise/ha/ha_def.cf' to '/var/cfengine/inputs/cfe_internal/enterprise/ha/ha_def.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/cfe_internal/enterprise/ha/ha_def.cf.cfnew' to '/var/cfengine/inputs/cfe_internal/enterprise/ha/ha_def.cf'
+    info: Updated file '/var/cfengine/inputs/cfe_internal/enterprise/ha/ha_def.cf' from 'localhost:/var/cfengine/masterfiles/cfe_internal/enterprise/ha/ha_def.cf'
+    info: Copied file '/var/cfengine/masterfiles/cfe_internal/enterprise/ha/ha.cf' to '/var/cfengine/inputs/cfe_internal/enterprise/ha/ha.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/cfe_internal/enterprise/ha/ha.cf.cfnew' to '/var/cfengine/inputs/cfe_internal/enterprise/ha/ha.cf'
+    info: Updated file '/var/cfengine/inputs/cfe_internal/enterprise/ha/ha.cf' from 'localhost:/var/cfengine/masterfiles/cfe_internal/enterprise/ha/ha.cf'
+    info: Copied file '/var/cfengine/masterfiles/cfe_internal/enterprise/mission_portal.cf' to '/var/cfengine/inputs/cfe_internal/enterprise/mission_portal.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/cfe_internal/enterprise/mission_portal.cf.cfnew' to '/var/cfengine/inputs/cfe_internal/enterprise/mission_portal.cf'
+    info: Updated file '/var/cfengine/inputs/cfe_internal/enterprise/mission_portal.cf' from 'localhost:/var/cfengine/masterfiles/cfe_internal/enterprise/mission_portal.cf'
+    info: Copied file '/var/cfengine/masterfiles/cfe_internal/enterprise/main.cf' to '/var/cfengine/inputs/cfe_internal/enterprise/main.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/cfe_internal/enterprise/main.cf.cfnew' to '/var/cfengine/inputs/cfe_internal/enterprise/main.cf'
+    info: Updated file '/var/cfengine/inputs/cfe_internal/enterprise/main.cf' from 'localhost:/var/cfengine/masterfiles/cfe_internal/enterprise/main.cf'
+    info: Copied file '/var/cfengine/masterfiles/cfe_internal/enterprise/CFE_hub_specific.cf' to '/var/cfengine/inputs/cfe_internal/enterprise/CFE_hub_specific.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/cfe_internal/enterprise/CFE_hub_specific.cf.cfnew' to '/var/cfengine/inputs/cfe_internal/enterprise/CFE_hub_specific.cf'
+    info: Updated file '/var/cfengine/inputs/cfe_internal/enterprise/CFE_hub_specific.cf' from 'localhost:/var/cfengine/masterfiles/cfe_internal/enterprise/CFE_hub_specific.cf'
+    info: Copied file '/var/cfengine/masterfiles/cfe_internal/enterprise/file_change.cf' to '/var/cfengine/inputs/cfe_internal/enterprise/file_change.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/cfe_internal/enterprise/file_change.cf.cfnew' to '/var/cfengine/inputs/cfe_internal/enterprise/file_change.cf'
+    info: Updated file '/var/cfengine/inputs/cfe_internal/enterprise/file_change.cf' from 'localhost:/var/cfengine/masterfiles/cfe_internal/enterprise/file_change.cf'
+    info: Created directory '/var/cfengine/inputs/cfe_internal/core'
+    info: Created directory '/var/cfengine/inputs/cfe_internal/core/deprecated'
+    info: Copied file '/var/cfengine/masterfiles/cfe_internal/core/deprecated/cfengine_processes.cf' to '/var/cfengine/inputs/cfe_internal/core/deprecated/cfengine_processes.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/cfe_internal/core/deprecated/cfengine_processes.cf.cfnew' to '/var/cfengine/inputs/cfe_internal/core/deprecated/cfengine_processes.cf'
+    info: Updated file '/var/cfengine/inputs/cfe_internal/core/deprecated/cfengine_processes.cf' from 'localhost:/var/cfengine/masterfiles/cfe_internal/core/deprecated/cfengine_processes.cf'
+    info: Created directory '/var/cfengine/inputs/cfe_internal/core/watchdog'
+    info: Created directory '/var/cfengine/inputs/cfe_internal/core/watchdog/templates'
+    info: Copied file '/var/cfengine/masterfiles/cfe_internal/core/watchdog/templates/watchdog-windows.ps1.mustache' to '/var/cfengine/inputs/cfe_internal/core/watchdog/templates/watchdog-windows.ps1.mustache.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/cfe_internal/core/watchdog/templates/watchdog-windows.ps1.mustache.cfnew' to '/var/cfengine/inputs/cfe_internal/core/watchdog/templates/watchdog-windows.ps1.mustache'
+    info: Updated file '/var/cfengine/inputs/cfe_internal/core/watchdog/templates/watchdog-windows.ps1.mustache' from 'localhost:/var/cfengine/masterfiles/cfe_internal/core/watchdog/templates/watchdog-windows.ps1.mustache'
+    info: Copied file '/var/cfengine/masterfiles/cfe_internal/core/watchdog/templates/watchdog.mustache' to '/var/cfengine/inputs/cfe_internal/core/watchdog/templates/watchdog.mustache.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/cfe_internal/core/watchdog/templates/watchdog.mustache.cfnew' to '/var/cfengine/inputs/cfe_internal/core/watchdog/templates/watchdog.mustache'
+    info: Updated file '/var/cfengine/inputs/cfe_internal/core/watchdog/templates/watchdog.mustache' from 'localhost:/var/cfengine/masterfiles/cfe_internal/core/watchdog/templates/watchdog.mustache'
+    info: Copied file '/var/cfengine/masterfiles/cfe_internal/core/watchdog/watchdog.cf' to '/var/cfengine/inputs/cfe_internal/core/watchdog/watchdog.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/cfe_internal/core/watchdog/watchdog.cf.cfnew' to '/var/cfengine/inputs/cfe_internal/core/watchdog/watchdog.cf'
+    info: Updated file '/var/cfengine/inputs/cfe_internal/core/watchdog/watchdog.cf' from 'localhost:/var/cfengine/masterfiles/cfe_internal/core/watchdog/watchdog.cf'
+    info: Copied file '/var/cfengine/masterfiles/cfe_internal/core/log_rotation.cf' to '/var/cfengine/inputs/cfe_internal/core/log_rotation.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/cfe_internal/core/log_rotation.cf.cfnew' to '/var/cfengine/inputs/cfe_internal/core/log_rotation.cf'
+    info: Updated file '/var/cfengine/inputs/cfe_internal/core/log_rotation.cf' from 'localhost:/var/cfengine/masterfiles/cfe_internal/core/log_rotation.cf'
+    info: Copied file '/var/cfengine/masterfiles/cfe_internal/core/main.cf' to '/var/cfengine/inputs/cfe_internal/core/main.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/cfe_internal/core/main.cf.cfnew' to '/var/cfengine/inputs/cfe_internal/core/main.cf'
+    info: Updated file '/var/cfengine/inputs/cfe_internal/core/main.cf' from 'localhost:/var/cfengine/masterfiles/cfe_internal/core/main.cf'
+    info: Copied file '/var/cfengine/masterfiles/cfe_internal/core/host_info_report.cf' to '/var/cfengine/inputs/cfe_internal/core/host_info_report.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/cfe_internal/core/host_info_report.cf.cfnew' to '/var/cfengine/inputs/cfe_internal/core/host_info_report.cf'
+    info: Updated file '/var/cfengine/inputs/cfe_internal/core/host_info_report.cf' from 'localhost:/var/cfengine/masterfiles/cfe_internal/core/host_info_report.cf'
+    info: Copied file '/var/cfengine/masterfiles/cfe_internal/core/limit_robot_agents.cf' to '/var/cfengine/inputs/cfe_internal/core/limit_robot_agents.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/cfe_internal/core/limit_robot_agents.cf.cfnew' to '/var/cfengine/inputs/cfe_internal/core/limit_robot_agents.cf'
+    info: Updated file '/var/cfengine/inputs/cfe_internal/core/limit_robot_agents.cf' from 'localhost:/var/cfengine/masterfiles/cfe_internal/core/limit_robot_agents.cf'
+    info: Copied file '/var/cfengine/masterfiles/cfe_internal/recommendations.cf' to '/var/cfengine/inputs/cfe_internal/recommendations.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/cfe_internal/recommendations.cf.cfnew' to '/var/cfengine/inputs/cfe_internal/recommendations.cf'
+    info: Updated file '/var/cfengine/inputs/cfe_internal/recommendations.cf' from 'localhost:/var/cfengine/masterfiles/cfe_internal/recommendations.cf'
+    info: Created directory '/var/cfengine/inputs/controls'
+    info: Copied file '/var/cfengine/masterfiles/controls/cf_monitord.cf' to '/var/cfengine/inputs/controls/cf_monitord.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/controls/cf_monitord.cf.cfnew' to '/var/cfengine/inputs/controls/cf_monitord.cf'
+    info: Updated file '/var/cfengine/inputs/controls/cf_monitord.cf' from 'localhost:/var/cfengine/masterfiles/controls/cf_monitord.cf'
+    info: Copied file '/var/cfengine/masterfiles/controls/cf_runagent.cf' to '/var/cfengine/inputs/controls/cf_runagent.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/controls/cf_runagent.cf.cfnew' to '/var/cfengine/inputs/controls/cf_runagent.cf'
+    info: Updated file '/var/cfengine/inputs/controls/cf_runagent.cf' from 'localhost:/var/cfengine/masterfiles/controls/cf_runagent.cf'
+    info: Copied file '/var/cfengine/masterfiles/controls/cf_hub.cf' to '/var/cfengine/inputs/controls/cf_hub.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/controls/cf_hub.cf.cfnew' to '/var/cfengine/inputs/controls/cf_hub.cf'
+    info: Updated file '/var/cfengine/inputs/controls/cf_hub.cf' from 'localhost:/var/cfengine/masterfiles/controls/cf_hub.cf'
+    info: Copied file '/var/cfengine/masterfiles/controls/def.cf' to '/var/cfengine/inputs/controls/def.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/controls/def.cf.cfnew' to '/var/cfengine/inputs/controls/def.cf'
+    info: Updated file '/var/cfengine/inputs/controls/def.cf' from 'localhost:/var/cfengine/masterfiles/controls/def.cf'
+    info: Copied file '/var/cfengine/masterfiles/controls/cf_serverd.cf' to '/var/cfengine/inputs/controls/cf_serverd.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/controls/cf_serverd.cf.cfnew' to '/var/cfengine/inputs/controls/cf_serverd.cf'
+    info: Updated file '/var/cfengine/inputs/controls/cf_serverd.cf' from 'localhost:/var/cfengine/masterfiles/controls/cf_serverd.cf'
+    info: Copied file '/var/cfengine/masterfiles/controls/cf_execd.cf' to '/var/cfengine/inputs/controls/cf_execd.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/controls/cf_execd.cf.cfnew' to '/var/cfengine/inputs/controls/cf_execd.cf'
+    info: Updated file '/var/cfengine/inputs/controls/cf_execd.cf' from 'localhost:/var/cfengine/masterfiles/controls/cf_execd.cf'
+    info: Copied file '/var/cfengine/masterfiles/controls/update_def_inputs.cf' to '/var/cfengine/inputs/controls/update_def_inputs.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/controls/update_def_inputs.cf.cfnew' to '/var/cfengine/inputs/controls/update_def_inputs.cf'
+    info: Updated file '/var/cfengine/inputs/controls/update_def_inputs.cf' from 'localhost:/var/cfengine/masterfiles/controls/update_def_inputs.cf'
+    info: Copied file '/var/cfengine/masterfiles/controls/reports.cf' to '/var/cfengine/inputs/controls/reports.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/controls/reports.cf.cfnew' to '/var/cfengine/inputs/controls/reports.cf'
+    info: Updated file '/var/cfengine/inputs/controls/reports.cf' from 'localhost:/var/cfengine/masterfiles/controls/reports.cf'
+    info: Copied file '/var/cfengine/masterfiles/controls/cf_agent.cf' to '/var/cfengine/inputs/controls/cf_agent.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/controls/cf_agent.cf.cfnew' to '/var/cfengine/inputs/controls/cf_agent.cf'
+    info: Updated file '/var/cfengine/inputs/controls/cf_agent.cf' from 'localhost:/var/cfengine/masterfiles/controls/cf_agent.cf'
+    info: Copied file '/var/cfengine/masterfiles/controls/update_def.cf' to '/var/cfengine/inputs/controls/update_def.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/controls/update_def.cf.cfnew' to '/var/cfengine/inputs/controls/update_def.cf'
+    info: Updated file '/var/cfengine/inputs/controls/update_def.cf' from 'localhost:/var/cfengine/masterfiles/controls/update_def.cf'
+    info: Copied file '/var/cfengine/masterfiles/controls/def_inputs.cf' to '/var/cfengine/inputs/controls/def_inputs.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/controls/def_inputs.cf.cfnew' to '/var/cfengine/inputs/controls/def_inputs.cf'
+    info: Updated file '/var/cfengine/inputs/controls/def_inputs.cf' from 'localhost:/var/cfengine/masterfiles/controls/def_inputs.cf'
+    info: Created directory '/var/cfengine/inputs/inventory'
+    info: Copied file '/var/cfengine/masterfiles/inventory/lsb.cf' to '/var/cfengine/inputs/inventory/lsb.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/inventory/lsb.cf.cfnew' to '/var/cfengine/inputs/inventory/lsb.cf'
+    info: Updated file '/var/cfengine/inputs/inventory/lsb.cf' from 'localhost:/var/cfengine/masterfiles/inventory/lsb.cf'
+    info: Copied file '/var/cfengine/masterfiles/inventory/freebsd.cf' to '/var/cfengine/inputs/inventory/freebsd.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/inventory/freebsd.cf.cfnew' to '/var/cfengine/inputs/inventory/freebsd.cf'
+    info: Updated file '/var/cfengine/inputs/inventory/freebsd.cf' from 'localhost:/var/cfengine/masterfiles/inventory/freebsd.cf'
+    info: Copied file '/var/cfengine/masterfiles/inventory/suse.cf' to '/var/cfengine/inputs/inventory/suse.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/inventory/suse.cf.cfnew' to '/var/cfengine/inputs/inventory/suse.cf'
+    info: Updated file '/var/cfengine/inputs/inventory/suse.cf' from 'localhost:/var/cfengine/masterfiles/inventory/suse.cf'
+    info: Copied file '/var/cfengine/masterfiles/inventory/debian.cf' to '/var/cfengine/inputs/inventory/debian.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/inventory/debian.cf.cfnew' to '/var/cfengine/inputs/inventory/debian.cf'
+    info: Updated file '/var/cfengine/inputs/inventory/debian.cf' from 'localhost:/var/cfengine/masterfiles/inventory/debian.cf'
+    info: Copied file '/var/cfengine/masterfiles/inventory/linux.cf' to '/var/cfengine/inputs/inventory/linux.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/inventory/linux.cf.cfnew' to '/var/cfengine/inputs/inventory/linux.cf'
+    info: Updated file '/var/cfengine/inputs/inventory/linux.cf' from 'localhost:/var/cfengine/masterfiles/inventory/linux.cf'
+    info: Copied file '/var/cfengine/masterfiles/inventory/os.cf' to '/var/cfengine/inputs/inventory/os.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/inventory/os.cf.cfnew' to '/var/cfengine/inputs/inventory/os.cf'
+    info: Updated file '/var/cfengine/inputs/inventory/os.cf' from 'localhost:/var/cfengine/masterfiles/inventory/os.cf'
+    info: Copied file '/var/cfengine/masterfiles/inventory/windows.cf' to '/var/cfengine/inputs/inventory/windows.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/inventory/windows.cf.cfnew' to '/var/cfengine/inputs/inventory/windows.cf'
+    info: Updated file '/var/cfengine/inputs/inventory/windows.cf' from 'localhost:/var/cfengine/masterfiles/inventory/windows.cf'
+    info: Copied file '/var/cfengine/masterfiles/inventory/redhat.cf' to '/var/cfengine/inputs/inventory/redhat.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/inventory/redhat.cf.cfnew' to '/var/cfengine/inputs/inventory/redhat.cf'
+    info: Updated file '/var/cfengine/inputs/inventory/redhat.cf' from 'localhost:/var/cfengine/masterfiles/inventory/redhat.cf'
+    info: Copied file '/var/cfengine/masterfiles/inventory/aix.cf' to '/var/cfengine/inputs/inventory/aix.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/inventory/aix.cf.cfnew' to '/var/cfengine/inputs/inventory/aix.cf'
+    info: Updated file '/var/cfengine/inputs/inventory/aix.cf' from 'localhost:/var/cfengine/masterfiles/inventory/aix.cf'
+    info: Copied file '/var/cfengine/masterfiles/inventory/any.cf' to '/var/cfengine/inputs/inventory/any.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/inventory/any.cf.cfnew' to '/var/cfengine/inputs/inventory/any.cf'
+    info: Updated file '/var/cfengine/inputs/inventory/any.cf' from 'localhost:/var/cfengine/masterfiles/inventory/any.cf'
+    info: Copied file '/var/cfengine/masterfiles/inventory/generic.cf' to '/var/cfengine/inputs/inventory/generic.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/inventory/generic.cf.cfnew' to '/var/cfengine/inputs/inventory/generic.cf'
+    info: Updated file '/var/cfengine/inputs/inventory/generic.cf' from 'localhost:/var/cfengine/masterfiles/inventory/generic.cf'
+    info: Copied file '/var/cfengine/masterfiles/inventory/macos.cf' to '/var/cfengine/inputs/inventory/macos.cf.cfnew' (mode '600')
+    info: Moved '/var/cfengine/inputs/inventory/macos.cf.cfnew' to '/var/cfengine/inputs/inventory/macos.cf'
+    info: Updated file '/var/cfengine/inputs/inventory/macos.cf' from 'localhost:/var/cfengine/masterfiles/inventory/macos.cf'
+    info: files promise '/var/cfengine/inputs' repaired
+    info: Executing 'no timeout' ... '"/var/cfengine/bin/cf-agent" -f /var/cfengine/inputs/update.cf --define bootstrap_mode'
+    info: Completed execution of '"/var/cfengine/bin/cf-agent" -f /var/cfengine/inputs/update.cf --define bootstrap_mode'
+R: Bootstrapping from host '127.0.0.1' via built-in policy '/var/cfengine/inputs/failsafe.cf'
+R: This host assumes the role of policy server
+R: Updated local policy from policy server
+  notice: Bootstrap to 'localhost' completed successfully!
