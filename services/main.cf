@@ -14,5 +14,5 @@ bundle agent main
   nope: # this won't work, there is no nope promise type
 
   reports:
-    "hi now";
+    "hi now"
 }
