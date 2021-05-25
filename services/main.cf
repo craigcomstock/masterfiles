@@ -10,9 +10,4 @@ bundle agent main
 {
   methods:
     # Activate your custom policies here
-
-  nope: # this won't work, there is no nope promise type
-
-  reports:
-    "hi now"
 }
