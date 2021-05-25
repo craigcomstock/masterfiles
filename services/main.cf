@@ -10,4 +10,7 @@ bundle agent main
 {
   methods:
     # Activate your custom policies here
+
+  reports:
+    "hello";
 }
