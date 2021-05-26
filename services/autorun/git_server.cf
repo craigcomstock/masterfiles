@@ -1,8 +1,7 @@
 bundle agent git_server
 {
   meta:
-    policy_server::
-      "tags" slist => { "autorun" };
+    "tags" slist => { "autorun" };
   vars:
     "_repos" slist => {
       "dotfiles",
