@@ -1,7 +1,6 @@
 bundle agent git_server
 {
   meta:
-    host001::
       "tags" slist => { "autorun" };
   vars:
     "_repos" slist => {
