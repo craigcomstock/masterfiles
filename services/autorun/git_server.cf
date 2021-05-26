@@ -13,11 +13,11 @@ bundle agent git_server
     "_basedir" string => "/srv/git";
   files:
     "$(_basedir)$(const.dirsep)."
-      create => "true",
-      action => warn;
+      create => "true";
+      # action => warn;
     "$(_basedir)$(const.dirsep)$(_repos).git$(const.dirsep)."
-      create => "true",
-      action => warn;
+      create => "true";
+      # action => warn;
 }
 
 body action warn
