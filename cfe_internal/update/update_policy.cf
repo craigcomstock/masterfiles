@@ -634,36 +634,36 @@ bundle agent modules_presence
 #              be updated in $(sys.workdir)/modules, including any sub-directories.
 {
   vars:
-    "vendored_dir" string => "$(this.promise_dirname)/../../modules/packages/vendored/";
-    "override_dir" string => "$(this.promise_dirname)/../../modules/packages/";
-    "vendored_paths" slist => findfiles("$(vendored_dir)*.mustache");
-    "package_paths_tmp" slist => findfiles("$(override_dir)*");
-    "package_paths" slist => filter("$(override_dir)vendored", package_paths_tmp, "false", "true", 999);
-    "vendored_modules" slist => maplist(regex_replace("$(this)", "$(vendored_dir)(.*).mustache", "$1", "g"), @(vendored_paths));
-    "override_modules" slist => maplist(regex_replace("$(this)", "$(override_dir)(.*)", "$1", "g"), @(package_paths));
+    "_vendored_dir" string => "$(this.promise_dirname)/../../modules/packages/vendored/";
+    "_override_dir" string => "$(this.promise_dirname)/../../modules/packages/";
+    "_vendored_paths" slist => findfiles("$(_vendored_dir)*.mustache");
+    "_package_paths_tmp" slist => findfiles("$(_override_dir)*");
+    "_package_paths" slist => filter("$(_override_dir)vendored", _package_paths_tmp, "false", "true", 999);
+    "_vendored_modules" slist => maplist(regex_replace("$(this)", "$(_vendored_dir)(.*).mustache", "$1", "g"), @(_vendored_paths));
+    "_override_modules" slist => maplist(regex_replace("$(this)", "$(_override_dir)(.*)", "$1", "g"), @(_package_paths));
 
   classes:
-    "override_vendored_module_$(vendored_modules)" expression => fileexists("$(override_dir)$(vendored_modules)");
-    "override_module_$(override_modules)" expression => fileexists("$(override_dir)$(override_modules)");
+    "override_vendored_module_$(_vendored_modules)" expression => fileexists("$(_override_dir)$(_vendored_modules)");
+    "override_module_$(_override_modules)" expression => fileexists("$(_override_dir)$(_override_modules)");
 
 # NOTE: here we are using the .mustache extension only to
 # ensure that the modules scripts are copied as part of
 # update (see controls/update_def.cf input_name_patterns var.
 
   files:
-    "$(sys.workdir)/modules/packages/$(vendored_modules)"
+    "$(sys.workdir)/modules/packages/$(_vendored_modules)"
       create => "true",
       perms => u_mo("755", "root"),
-      unless => canonify("override_vendored_module_$(vendored_modules)"),
-      edit_template => "$(vendored_dir)$(vendored_modules).mustache",
+      unless => canonify("override_vendored_module_$(_vendored_modules)"),
+      edit_template => "$(_vendored_dir)$(_vendored_modules).mustache",
       template_method => "mustache";
 
-    "$(sys.workdir)/modules/packages/$(override_modules)"
-      copy_from => u_cp_missing_ok("$(override_dir)$(override_modules)"),
+    "$(sys.workdir)/modules/packages/$(_override_modules)"
+      copy_from => u_cp_missing_ok("$(_override_dir)$(_override_modules)"),
       perms => u_mo("755", "root"),
       if => or (
-        canonify("override_vendored_module_$(override_modules)"),
-        canonify("override_module_$(override_modules)"));
+        canonify("override_vendored_module_$(_override_modules)"),
+        canonify("override_module_$(_override_modules)"));
 
     "$(sys.workdir)/modules"
       comment => "Copy any non-packages modules",
@@ -678,17 +678,17 @@ bundle agent modules_presence
 
   reports:
     DEBUG::
-      "vendored_modules: $(vendored_modules)";
-      "override_modules: $(override_modules)";
-      "vendored_dir: $(vendored_dir)";
-      "vendored_paths: $(vendored_paths)";
-      "override_dir: $(override_dir)";
-      "package_paths: $(package_paths)";
-      "override_vendored_module_$(vendored_modules)"
-        if => "override_vendored_module_$(vendored_modules)";
-      "override_module_$(override_modules)"
-        if => "override_module_$(override_modules)";
-      "canonified: $(with)" with => canonify("override_vendored_module_$(vendored_modules)");
+      "_vendored_modules: $(_vendored_modules)";
+      "_override_modules: $(_override_modules)";
+      "_vendored_dir: $(_vendored_dir)";
+      "_vendored_paths: $(_vendored_paths)";
+      "_override_dir: $(_override_dir)";
+      "_package_paths: $(_package_paths)";
+      "override_vendored_module_$(_vendored_modules)"
+        if => "override_vendored_module_$(_vendored_modules)";
+      "override_module_$(_override_modules)"
+        if => "override_module_$(_override_modules)";
+      "canonified: $(with)" with => canonify("override_vendored_module_$(_vendored_modules)");
 }
 
 body file_select not_vendored_modules
