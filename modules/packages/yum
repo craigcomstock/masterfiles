@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# custom script
+# custom script v2
 # Note that the shebang above is ignored when run in policy
 # See lib/packages.cf `package_module yum` use of the
 # `interpreter` attribute to use cfengine-selected-python.
