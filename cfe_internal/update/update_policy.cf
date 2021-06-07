@@ -255,6 +255,16 @@ bundle agent cfe_internal_update_policy_cpv
       classes => u_results("bundle", "update_inputs"),
       move_obstructions => "true";
 
+      # Note that here we do not filter with `update_def.input_name_patterns` so
+      # that we copy any and all modules scripts.
+      "$(inputs_dir)/modules"
+      comment => "Copy any files in modules from master source on policy server if a new validation was acquired",
+      handle => "cfe_internal_update_policy_files_modules_dir",
+      copy_from => u_rcp_missing_ok("$(modules_dir_source)", @(update_def.policy_servers)),
+      depth_search => u_recurse("inf"),
+      perms => u_m("755"),
+      action => u_immediate;
+
     update_inputs_not_kept::
 
       "$(inputs_dir)/cf_promises_validated" -> { "CFE-2587" }
@@ -407,6 +417,13 @@ body copy_from u_rcp(from,server)
 }
 
 #########################################################
+
+body copy_from u_rcp_missing_ok(from,server)
+# @brief same as u_rcp but allow from to be missing
+{
+      inherit_from => u_rcp($(from),$(server));
+      missing_ok => "true";
+}
 
 #########################################################
 
