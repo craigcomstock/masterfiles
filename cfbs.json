@@ -1,0 +1,21 @@
+{
+  "name": "Masterfiles Policy Framework",
+  "description": "you know, the latest",
+  "type": "module-repo",
+  "provides": {
+    "masterfiles-latest": {
+      "description": "Official CFEngine Masterfiles Policy Framework (MPF)",
+      "tags": ["supported", "base"],
+      "repo": "https://github.com/cfengine/masterfiles",
+      "by": "https://github.com/cfengine",
+      "version": "0.1.1",
+      "steps": [
+        "run ./autogen.sh",
+        "delete ./autogen.sh",
+        "run ./cfbs/cleanup.sh",
+        "delete ./cfbs/cleanup.sh",
+        "copy ./ ./"
+      ]
+    }
+  }
+}
