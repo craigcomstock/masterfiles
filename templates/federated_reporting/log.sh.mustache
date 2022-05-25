@@ -16,3 +16,17 @@ function log() {
     "${CFE_LOGGER}" "$1"
   fi
 }
+declare -A stats
+
+function stat_start()
+{
+  stats[$1]=$(date +%s)
+}
+
+function stat_end()
+{
+  local end_time=$(date +%s)
+  local begin_time=${stats[$1]}
+  dur=$((end_time - begin_time))
+  echo "stat $1 took $dur seconds"
+}
