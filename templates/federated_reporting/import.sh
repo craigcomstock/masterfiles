@@ -58,10 +58,12 @@ for file in $dump_files; do
     log "No feeder with hostkey $hostkey found in cfdb.__hubs, skipping the dump file $file, consider deleting this file or re-adding the feeder to superhub"
     dump_files=$(echo "$dump_files" | sed "s,\s\?$file,," | xargs)
   else
+    log "begin ensure_feeder_schema($hostkey)"
     "$CFE_BIN_DIR"/psql -U $CFE_FR_DB_USER -d cfdb --set "ON_ERROR_STOP=1" \
                         $CFE_FR_PSQL_OPTIONS \
                         -c "SELECT ensure_feeder_schema('$hostkey', ARRAY[$table_whitelist]);" \
       >> "$CFE_FR_SUPERHUB_IMPORT_DIR/schema_setup.log" 2>&1 || failed=1
+    log "end ensure_feeder_schema($hostkey)"
   fi
 done
 if [ "$failed" = "0" ]; then
@@ -133,10 +135,12 @@ log "Attaching schemas"
 for file in $dump_files; do
   if [ ! -f "${file}.failed" ]; then
     hostkey=$(basename "$file" | cut -d. -f1)
+    log "begin attach_feeder_schema($hostkey)"
     "$CFE_BIN_DIR"/psql -U $CFE_FR_DB_USER -d cfdb --set "ON_ERROR_STOP=1" \
                         $CFE_FR_PSQL_OPTIONS \
                         -c "SET SCHEMA 'public'; SELECT attach_feeder_schema('$hostkey', ARRAY[$table_whitelist]);" \
       >> "$CFE_FR_SUPERHUB_IMPORT_DIR/schema_attach.log" 2>&1 || failed=1
+    log "end attach_feeder_schema($hostkey)"
   else
     rm -f "${file}.failed"
   fi
