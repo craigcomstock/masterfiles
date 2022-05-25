@@ -18,6 +18,7 @@ true "${CFE_FR_EXTRACTOR?undefined}"
 true "${CFE_FR_TABLES?undefined}"
 true "${CFE_FR_INVENTORY_REFRESH_CMD?undefined}"
 true "${CFE_FR_HANDLE_DUPLICATES?undefined}"
+true ${CFE_FR_PSQL_OPTIONS?undefined}"
 
 if ! type "$CFE_FR_EXTRACTOR" >/dev/null; then
   log "Extractor $CFE_FR_EXTRACTOR not available!"
@@ -49,6 +50,7 @@ table_whitelist=$(printf "'%s'," $CFE_FR_TABLES | sed -e 's/,$//')
 failed=0
 log "Setting up schemas for import"
 declare -a hostkeys
+rm -f "$CFE_FR_SUPERHUB_IMPORT_DIR/schema_setup.log"
 for file in $dump_files; do
   hostkey=$(basename "$file" | cut -d. -f1)
   hostkeys+=($hostkey)
@@ -57,8 +59,9 @@ for file in $dump_files; do
     dump_files=$(echo "$dump_files" | sed "s,\s\?$file,," | xargs)
   else
     "$CFE_BIN_DIR"/psql -U $CFE_FR_DB_USER -d cfdb --set "ON_ERROR_STOP=1" \
+                        $CFE_FR_PSQL_OPTIONS \
                         -c "SELECT ensure_feeder_schema('$hostkey', ARRAY[$table_whitelist]);" \
-      > schema_setup.log 2>&1 || failed=1
+      >> "$CFE_FR_SUPERHUB_IMPORT_DIR/schema_setup.log" 2>&1 || failed=1
   fi
 done
 if [ "$failed" = "0" ]; then
@@ -68,10 +71,12 @@ else
   # remove any newly created schemas (revert the changes)
   for file in $dump_files; do
     hostkey=$(basename "$file" | cut -d. -f1)
-    "$CFE_BIN_DIR"/psql -U $CFE_FR_DB_USER -d cfdb -c "SELECT drop_feeder_schema('$hostkey');" || true
+    "$CFE_BIN_DIR"/psql -U $CFE_FR_DB_USER -d cfdb  \
+                        $CFE_FR_PSQL_OPTIONS \
+                        "SELECT drop_feeder_schema('$hostkey');" || true
   done
   echo "last 10 lines of schema_setup.log"
-  tail -n 10 schema_setup.log
+  tail -n 10 "$CFE_FR_SUPERHUB_IMPORT_DIR/schema_setup.log"
   exit 1
 fi
 
@@ -99,7 +104,9 @@ else
     log "Revert changes by dropping $hostkey feeder schema"
     # (the original/in-use/previous schema is left intact)
     hostkey=$(basename "$file" | cut -d. -f1)
-    "$CFE_BIN_DIR"/psql -U $CFE_FR_DB_USER -d cfdb -c "SELECT drop_feeder_schema('$hostkey');" || true
+    "$CFE_BIN_DIR"/psql -U $CFE_FR_DB_USER -d cfdb \
+                        $CFE_FR_PSQL_OPTIONS \
+                        -c "SELECT drop_feeder_schema('$hostkey');" || true
   done
 fi
 
@@ -107,6 +114,7 @@ if [ "$CFE_FR_HANDLE_DUPLICATES" = "yes" ]; then
   log "Handle Duplicate Hostkeys"
   hostkey_list=$(printf "'%s'," ${hostkeys[*]} | sed -e 's/,$//')
   "$CFE_BIN_DIR"/psql -U $CFE_FR_DB_USER -d cfdb --set "ON_ERROR_STOP=1" \
+                      $CFE_FR_PSQL_OPTIONS \
                       -c "SELECT handle_duplicate_hostkeys_in_import(ARRAY[$hostkey_list]);"  \
     > duplicates.log 2>&1 || failed=1
   if [ "$failed" = "0" ]; then
@@ -120,13 +128,15 @@ if [ "$CFE_FR_HANDLE_DUPLICATES" = "yes" ]; then
 fi
 
 failed=0
+rm -f "$CFE_FR_SUPERHUB_IMPORT_DIR/schema_attach.log"
 log "Attaching schemas"
 for file in $dump_files; do
   if [ ! -f "${file}.failed" ]; then
     hostkey=$(basename "$file" | cut -d. -f1)
     "$CFE_BIN_DIR"/psql -U $CFE_FR_DB_USER -d cfdb --set "ON_ERROR_STOP=1" \
+                        $CFE_FR_PSQL_OPTIONS \
                         -c "SET SCHEMA 'public'; SELECT attach_feeder_schema('$hostkey', ARRAY[$table_whitelist]);" \
-      > schema_attach.log 2>&1 || failed=1
+      >> "$CFE_FR_SUPERHUB_IMPORT_DIR/schema_attach.log" 2>&1 || failed=1
   else
     rm -f "${file}.failed"
   fi
@@ -138,7 +148,7 @@ else
   # case of failure
   log "Attaching schemas: FAILED"
   log "last 10 lines of schema_attach.log"
-  tail -n 10 schema_attach.log
+  tail -n 10 "$CFE_FR_SUPERHUB_IMPORT_DIR/schema_attach.log"
   exit 1
 fi
 
