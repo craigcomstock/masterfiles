@@ -18,7 +18,7 @@ true "${CFE_FR_EXTRACTOR?undefined}"
 true "${CFE_FR_TABLES?undefined}"
 true "${CFE_FR_INVENTORY_REFRESH_CMD?undefined}"
 true "${CFE_FR_HANDLE_DUPLICATES?undefined}"
-true ${CFE_FR_PSQL_OPTIONS?undefined}"
+true "${CFE_FR_PSQL_OPTIONS?undefined}"
 
 if ! type "$CFE_FR_EXTRACTOR" >/dev/null; then
   log "Extractor $CFE_FR_EXTRACTOR not available!"
