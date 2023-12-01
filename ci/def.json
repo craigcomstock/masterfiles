@@ -1,0 +1,11 @@
+{
+"classes": {
+"disable_always_accept_policy_server_acl": [ "any::" ],
+"disable_always_accept_policy_server": [ "any::" ]
+},
+  "variables": {
+    "default:def.acl": {
+      "value": [ "24.124.0.0/16", "192.168.33.0/24" ]
+    }
+  }
+}

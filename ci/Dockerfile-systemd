@@ -1,0 +1,3 @@
+FROM ubuntu:20.04
+RUN apt-get update -y && apt-get install -y systemd wget sudo
+CMD [ "/lib/systemd/systemd" ]
