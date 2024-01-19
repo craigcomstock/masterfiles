@@ -45,6 +45,8 @@ bundle common package_module_knowledge
 
     termux::
       "platform_default" string => "apt_get";
+    darwin::
+      "platform_default" string => "brew";
 }
 
 body package_module apk
@@ -119,6 +121,13 @@ body package_module pkgsrc
     query_updates_ifelapsed => "$(package_module_knowledge.query_updates_ifelapsed)";
 }
 
+body package_module brew
+{
+    query_installed_ifelapsed => "$(package_module_knowledge.query_installed_ifelapsed)";
+    query_updates_ifelapsed => "$(package_module_knowledge.query_updates_ifelapsed)";
+    #default_options => {};
+    interpreter => "/bin/sh";
+}
 body package_module yum
 # @brief Define details used when interfacing with yum
 {
@@ -1950,6 +1959,29 @@ body package_method generic
       package_add_command => "/usr/bin/pacman -S --noconfirm --noprogressbar --needed";
       package_delete_command => "/usr/bin/pacman -Rs --noconfirm";
       package_update_command => "/usr/bin/pacman -S --noconfirm --noprogressbar --needed";
+    darwin::
+      package_changes               => "bulk";
+      package_add_command           => "$(darwin_knowledge.call_sudo) -u craig $(darwin_knowledge.call_brew) install";
+      package_delete_command        => "$(darwin_knowledge.call_sudo) -u craig $(darwin_knowledge.call_brew) uninstall";
+      package_delete_convention     => "$(name)";
+      package_name_convention       => "$(name)";
+
+      # Homebrew can list only installed packages along versions.
+      # for a complete list of packages, we could use `brew search`, but there's no easy
+      # way to determine the version or wether it's installed.
+      package_installed_regex       => ".*";
+      package_list_command          => "$(darwin_knowledge.call_sudo) -u craig $(darwin_knowledge.call_brew) list --versions";
+      package_list_name_regex       => "$(darwin_knowledge.brew_name_regex)";
+      package_list_version_regex    => "$(darwin_knowledge.brew_version_regex)";
+      package_list_update_command   => "$(darwin_knowledge.call_sudo) -u craig $(darwin_knowledge.call_brew) update";
+      package_list_update_ifelapsed => "$(common_knowledge.list_update_ifelapsed)";
+
+      # brew list [package] will print the installed files and return 1 if not found.
+      package_verify_command        => "$(darwin_knowledge.call_sudo) -u craig $(darwin_knowledge.call_brew) list";
+      package_noverify_returncode   => "1";
+
+      # remember to specify the package version
+      package_update_command        => "$(darwin_knowledge.call_sudo) -u craig $(darwin_knowledge.call_brew) upgrade";
 }
 
 ## Useful bundles ##
