@@ -213,7 +213,6 @@ bundle agent distributed_cleanup_dependencies
       "$(packages)"
         policy => "present",
         classes => default:results("bundle", "cfengine_mp_fr_distributed_cleanup_packages"),
-        action => default:policy ( "warn" ),
         package_module => default:apt_get;
 
     redhat.!(centos_6|redhat_6)::
