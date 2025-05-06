@@ -1,3 +1,5 @@
+3.21.8:
+
 3.21.7:
 	- Added paths for the dmsetup, fdisk, and lshw commands (ENT-12560)
 	- Allowed images from raw.github.com (ENT-12531)
