@@ -37,6 +37,9 @@ export TAR_OPTIONS
 LC_ALL = C
 export LC_ALL
 
+# --no-name strips the mtime from the gzip header. --best is automake's default.
+GZIP_ENV = "--best --no-name"
+
 # Store the permissions properly in the tarball for acceptance tests to succeed.
 # Also normalize directory permissions (which would otherwise be affected by the
 # builder's umask). When SOURCE_DATE_EPOCH is set, clamp every mtime to it so
