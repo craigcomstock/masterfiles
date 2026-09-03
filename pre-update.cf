@@ -1,0 +1,17 @@
+bundle agent main
+{
+  files:
+    "${sys.input}/def.json"
+      handle => "cfe_internal_update_def_json_copy",
+      copy_from => pre_remote_dcp("${sys.inputs_dir}/def.json", "${sys.policy_hub}");
+
+  commands:
+    "${sys.cf_agent} -Dfrom_pre_update -f \"${sys.update_policy_path}\";
+}
+
+body copy_from pre_remote_dcp(from, server)
+{
+  servers => { "${server}" };
+  source => "$(from)";
+  compare => "digest";
+}
